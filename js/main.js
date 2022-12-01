@@ -6,7 +6,7 @@ let signUpBtn = document.getElementById('sign-up-btn');
 
 
 // Array Storing Username & password
-let info = localStorage();
+let info = loadStorage();
 
 
 
@@ -14,17 +14,17 @@ let info = localStorage();
 signUpBtn.addEventListener('click', signUpHandler);
 
 function signUpHandler() {
-  console.log('Sign Up Btn Clicked');
+  let newUsername = document.getElementById("newUsername");
+  let newPassword = document.getElementById("newPassword");
+  info.push(newUser(newUsername, newPassword));
+  saveInfo();
 }
 
 // SIGN IN BTN CLICKED
 signInBtn.addEventListener('click', signInHandler);
 
 function signInHandler() {
-    let newUser
-    let newPassord
-    info.push(newUser(newUsername, newPassord));
-    saveInfo();
+    
 }
 
 
@@ -35,10 +35,10 @@ function signInHandler() {
 // helper functions
 
 // new user
-function newUser(newUsername, newPassord){
+function newUser (newUsername, newPassword){
   return {
     username: newUsername,
-    password: newPassord
+    password: newPassword
   };
 }
 
