@@ -29,9 +29,6 @@ function signInHandler() {
 
 
 
-
-
-
 // helper functions
 
 // new user
