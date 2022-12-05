@@ -14,17 +14,33 @@ let info = loadStorage();
 signUpBtn.addEventListener('click', signUpHandler);
 
 function signUpHandler() {
-  let newUsername = document.getElementById("newUsername");
-  let newPassword = document.getElementById("newPassword");
-  info.push(newUser(newUsername, newPassword));
-  saveInfo();
+  let newUsername = document.getElementById("newUsername").value;
+  let newPassword = document.getElementById("newPassword").value;
+  let confirmPassword = document.getElementById("confirmPassword").value;
+  if(newPassword === confirmPassword){
+    info.push(newUser(newUsername, newPassword));
+    saveInfo();
+    alert("SIGN UP SUSSCEFULL")
+  }
+  else{
+    alert("ERROR")
+  }
 }
 
 // SIGN IN BTN CLICKED
 signInBtn.addEventListener('click', signInHandler);
 
 function signInHandler() {
-    
+  let inputUsername = document.getElementById("inputUsername").value;
+  let inputPassword = document.getElementById("inputPassword").value;
+  for (let i = 0; i < info.length; i++){
+    if (inputUsername === info[i].username && inputPassword === info[i].password) {
+      alert(`Sign in Suscessful. Welcome, User ${inputUsername}`)
+    }else{
+      alert(`invalid sign in.`)
+    }
+  }
+  
 }
 
 
