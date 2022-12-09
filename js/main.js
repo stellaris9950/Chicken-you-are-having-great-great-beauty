@@ -57,7 +57,7 @@ function newUser (newUsername, newPassword){
 
 // save global Contact to local storage
 function saveInfo() {
-  localStorage.setItem('Info', JSON.stringify(info))
+  localStorage.setItem('info', JSON.stringify(info))
 }
 
 
